@@ -2,6 +2,12 @@
 February 6, 2025
 My step-by-step work process for solving the NICE XP Range cybersecurity challenge
 #### Configuration Management Gone Awry
+
+# Scenario:
+An error in our managed service providers' automated configuration management software has caused considerable damage to our network.
+Multiple systems and network pathways are now misconfigured and unable to be reconfigured with the automated tool.
+This downtime is costing the company considerably in online sales, in-store sales, and employee productivity.
+We need you to manually reconfigure the affected systems and networking equipment to get us back online.
 Steps to complete the lab: 
 
 # Logged into Fileshare and used ifconfig to check the network configuration.
