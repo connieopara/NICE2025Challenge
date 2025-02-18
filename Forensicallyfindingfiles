@@ -38,8 +38,13 @@ The files were successfully transferred to the Security Desk.
 
 I logged into the Security Desk to confirm if the files were now on the Desktop and sure enough, they were,
 
-Next, I created an archive of the two files using the Archive wizard, I selected both files and right-clicked on them, and selected Archive. then changed the file extension to .tar and named the file 'forarchive' as instructed. 
+Next, I created an archive of the two files using the Archive wizard, 
+I selected both files and right-clicked on them, and selected Archive. then changed the file extension to .tar and named the file 'forarchive' as instructed. 
+I moved the created archive file to the desktop.
 
-Finally, I used the 'pdfid' utility to scan Instructions.pdf saved the scan result  to a document called pdfresults.txt, using the following command:
+I used the 'pdfid' utility to scan Instructions.pdf saved the scan result  to a document called pdfresults.txt, using the following command:
 
 playerone@security-desk )-[~] $ pdfid ~/Desktop/Evidence/Instructions.pdf > pdfresults.txt
+Finally, I moved the pdfresults.txt to the desktop. 
+Tools used:
+Command Prompt, Disk Management, pdfid, scp, File Explorer
