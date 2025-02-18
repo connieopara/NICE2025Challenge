@@ -30,8 +30,8 @@ when prompted for the password, I entered Playerone credentials (password123) an
 
 I transferred the second file using the same method.
 
->cd ..
->scp Instrcutions.pdf playerone@172.16.30.6:/home/playerone/Desktop/Evidence
+>cd /d E:\
+E:\> scp Instrcutions.pdf playerone@172.16.30.6:/home/playerone/Desktop/Evidence
 #enter password
 
 The files were successfully transferred to the Security Desk.
