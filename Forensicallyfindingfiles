@@ -1,0 +1,47 @@
+# # Forensically Finding Files
+
+First, I logged into the Workstation desk and opened File Explorer to search for files with modified dates after February 2020. I did not find any files.
+
+Next, I went to disk management and noticed three file partitions. One of the volumes FlashDrive did not have a drive letter. Using the change drive letter wizard, I named it Drive E.
+
+In File Explorer, with hidden files and file extensions enabled under the views tab, I reviewed the contents of the E Drive (FlashDrive) and found two files that had been modified after February 2020.
+
+JanPayChecks.txt and Instructions.pdf
+
+Next, transfer these files to the Security Desk without modifying them:
+
+I used the following commands in the command prompt
+
+# This command switches from the current directory to the E: drive and takes you to its root directory (E:\).
+
+>cd /d E:\ 
+
+>ls
+
+> cd Finances
+
+I used the ls command to view the contents of the E:\ and cd Finances to change to the Finances folder
+
+The following command was used to transfer the file to the Security-Desk Desktop. 
+
+> scp JanPayChecks.txt playerone@172.16.30.6:/home/playerone/Desktop/Evidence
+
+when prompted for the password, I entered Playerone credentials (password123) and chose Yes when prompted 
+
+I transferred the second file using the same method.
+
+>cd ..
+>scp Instrcutions.pdf playerone@172.16.30.6:/home/playerone/Desktop/Evidence
+#enter password
+
+The files were successfully transferred to the Security Desk.
+
+I logged into the Security Desk to confirm if the files were now on the Desktop and sure enough, they were,
+
+Next, I created an archive of the two files using the Archive wizard, I selected both files and right-clicked on them, and selected Archive. then changed the file extension to .tar and named the file 'forarchive' as instructed. 
+
+Finally, I used the 'pdfid' utility to scan Instructions.pdf saved the scan result  to a document called pdfresults.txt, and moved it to the desktop using the following command:
+
+pdfid filename.pdf > pdfresults.txt where filename was Instructions.pdf
+
+> pdfid Instructions.pdf > ~/Desktop/pdfresults.txt
