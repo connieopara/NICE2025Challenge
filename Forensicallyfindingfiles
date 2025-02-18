@@ -40,8 +40,6 @@ I logged into the Security Desk to confirm if the files were now on the Desktop
 
 Next, I created an archive of the two files using the Archive wizard, I selected both files and right-clicked on them, and selected Archive. then changed the file extension to .tar and named the file 'forarchive' as instructed. 
 
-Finally, I used the 'pdfid' utility to scan Instructions.pdf saved the scan result  to a document called pdfresults.txt, and moved it to the desktop using the following command:
+Finally, I used the 'pdfid' utility to scan Instructions.pdf saved the scan result  to a document called pdfresults.txt, using the following command:
 
-pdfid filename.pdf > pdfresults.txt where filename was Instructions.pdf
-
-> pdfid Instructions.pdf > ~/Desktop/pdfresults.txt
+playerone@security-desk )-[~] $ pdfid ~/Desktop/Evidence/Instructions.pdf > pdfresults.txt
