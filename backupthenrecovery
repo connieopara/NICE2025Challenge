@@ -1,0 +1,109 @@
+# # A Database Story: Backup then Recovery 
+First I logged into the Database VM and opened the command prompt as Administrator.
+
+In the Administrator command prompt, type MySQL 
+
+This will take you into the MySQL environmentfrom MySQL prompt type SHOW DATABASES;
+
+mysql > SHOW DATABASES;
+
+This will display all the databases on the server, including wordpress.
+
+To check the MYSQL version type:
+
+mysql > SELECT VERSION(); 
+
+This returned the version information
+
+Version 5.7.21
+
+1 row in set <0.0.0 sec>
+
+Exit Mysql by typing Exit or Quit then press Enter to return to the normal command prompt.
+
+Next step: back up the WordPress database using the mysqldump command in the command prompt (not inside MySQL prompt)
+
+To back up the database, I needed to First, find where MySQL was installed i.e. the binary path of MySQL database in the Windows server. On the command prompt, type  where mysql
+
+Alternatively, you could search for mysql.exe by clicking on the search bar.
+
+It was located at C:\ProgramData\Scoop\apps\mysql\bin\mysq.exe 
+
+To change directory to the MySQL bin folder, Type
+
+C:\ cd ProgramData\Scoop\apps\mysql\5.7.21\bin
+
+this will take you to: C:\ProgramData\Scoop\apps\mysql\5.7.21\bin> prompt
+
+Next, Create a MySQL Dump of the 'wordpress' Database
+
+sudo mysqldump -u root -p wordpress > C:\dump.sql
+
+This creates a dump.sql file at C:\dump.sql.When prompted, enter the MySQL root password.
+
+Next, transfer the Backup File (dump.sql) to the Backup Server at 172.16.30.79
+
+First I tested connectivity between the Database and Backup servers ping 172.16.30.79 then from the command prompt initiate a file transfer using:
+
+C:\> scp dump.sql root@172.16.30.79:/ftp/public/backup This returned an error because /ftp/public/backup did not exist at the backup server so I logged into Backup to rectify this. 
+
+Log into Backup VM, type ls
+
+then create ftp/public/prodbackup type:
+
+sudo mkdir ftp/public/prodbackup
+
+Back on the Database server transfer the dump.sql file type:
+
+C:\> scp dump.sql root@172.16.30.79:/ftp/public/backup this was successful. 
+
+Now, verify that the transfer was successful on the backup server. Type ls -l dump.sql should exist
+
+To log in to the MySQL database on the Backup server using the mysql command type:
+
+sudo mysql -u root -p and enter password when prompted.
+
+You should see something like Welcome to the MariaDB Monitor . Server version 10.1.48-MariaDB .....
+
+Next, I created a database to import the dump into, I used "wordpresstest" using the command:
+
+CREATE DATABASE wordpresstest;
+
+you should see something like Query OK, 1 Row affected (0.00sec)
+
+Verify the database was created by typing:
+
+SHOW DATABASES; 
+
+then exit Mysql.
+
+I used the dump.sql to restore the database in the backup server:
+
+import the dump.sql file into the MySQL database (wordpresstest) using the following command:
+
+I moved into the root by typing sudo -i
+
+in root type:
+
+ mysql -u root -p wordpresstest < /ftp/public/prodbackup/dump.sql
+
+You will be prompted for the password.
+
+The dump.sql file was imported from the location /ftp/public/prodbackup/dump.sql.
+
+Finally, to verify that the data had been successfully imported. I logged into MySQL again and checked the database using the following commands:
+
+mysql -u root -p
+
+USE my_database;
+
+SHOW TABLES;
+
+Everything displayed correctly.
+
+
+
+
+
+
+
