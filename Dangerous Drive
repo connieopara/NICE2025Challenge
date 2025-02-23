@@ -1,0 +1,26 @@
+# Dangerous Drive
+
+To complete this challenge, I launched the Workstation-Desk Virtual Machine. I logged in with Playerone credentials launched ClamWin and ran a virus scan on Drive E.
+
+After the scan was completed,  four infected files were detected. Below is the scan summary/Results obtained. 
+
+Scan Started Sun Feb 23 01:37:06 2025
+
+E:\school\IST25\valentinesday.ptt.vsx: Eicar-Signature FOUND
+E:\thumb.ini: Eicar-Signature FOUND
+E:\tux\extmenu.cfg: Eicar-Signature FOUND
+E:\work\HRwork_files\permanent.tmp: Eicar-Signature FOUND
+
+Scan Summary
+
+Known viruses 8536763
+Engine Version: 0.103.2
+Scanned Directories: 12
+Scanned Files: 78
+Infected Files: 4
+
+After identifying the infected files, I opened File Explorer and located the E: drive. Before searching for the files, I enabled the "hidden items" and "file name extensions" options under View. I located the four infected files and permanently deleted the four infected files using shift + Delete.
+
+After deleting the four infected files I performed another scan on the E drive using ClamWin and the results showed no infected file. 
+
+Challenge completed. 
