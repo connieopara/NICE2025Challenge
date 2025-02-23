@@ -1,0 +1,31 @@
+## Interns & HR on the Domain Controller 
+
+I logged into the Domain Controller VM and launched the Server Manager.
+
+I accessed Active Directory Users and Computers through Server Manager> Tools > Active Directory Users and Computers.
+
+Next, I created three new user groups by selecting the domain dasweb.com > Action > New > Group 
+The groups created were HRSec for the HR security group, AccountingSec for the Accounting security group, and Miscellaneous Security group.
+
+After creating the groups, I added Brimlock Stones to AccountingSec, Sergio Chanel to HRSec, Gary Thatcher to the Domain Admin Security group, and all other users to the Miscellaneous Security group. 
+
+To add users to a group, select the group, right-click on it and go to properties, click on the members' tab, type in the name and click on the check names tab, then click add. To add members to the Miscellaneous security group, I selected all the other members, then right-clicked and selected Add to group. The Add to Group Wizard was launched then I checked for the Miscellaneous security group then successfully added the members. 
+
+Next, I launched File Explorer and enabled Network discovery and File sharing. 
+I opened Accounting Fileshare properties and added the new security groups I had created.
+
+Next, I  edited the permissions. I gave Domain Admins full control and allowed the read, write, and list permission for AccountingSec. HRSec and Miscellaneous were explicitly denied. 
+
+Also, on HRSec, I gave Domain Admins full control and allowed, read, write, and list permission for HRSec. AccountingSec and Miscellaneous were explicitly denied. 
+
+Next, I returned to Active Directory Users and Computers and disabled Rob's account. (Right-click on Rob under user and click on disable account)
+
+Then, select Sergio Chanel, go to properties, click on the Account tab select log on to, and check, the User can only log on to the following computers: type in WORKSTATION and add.  and under user properties, 
+
+Repeat the same process for Brimlock Stones to limit Brimlock to log in only to Workstation-desk. 
+
+All tasks required are completed. 
+
+Tools used: Server Manager
+Active Directory Users and Computers
+File Explorer
