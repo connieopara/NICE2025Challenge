@@ -1,0 +1,67 @@
+## Helpdesk Fun: User Workstation Nightmares [NG]
+
+Helpdesk Report: Resolving User Workstation Issues
+
+The following steps were taken to address and resolve issues on the user's workstation:
+
+1. Correcting Mouse Button Configuration
+
+Upon logging into the WorkstationDesk VM, it was observed that the mouse buttons were reversed. To rectify this:
+
+ Accessed Settings via the Start menu.
+
+ Navigated to Devices > Mouse.
+
+ I changed the primary button settings from right to left.
+
+Explanation: This adjustment ensures the left mouse button functions as the primary selection button, aligning with standard user preferences.
+
+2. Displaying Desktop Icons
+
+The desktop was missing its icons. To display them:
+
+ Right-clicked on the desktop and selected View.
+
+ Enabled the Show Desktop icons option.
+
+Explanation: Enabling this option restores the visibility of all desktop shortcuts and files.
+
+3. Mapping the HR Network Share to Drive H:
+
+To provide the user with access to the HR department's shared resources:
+
+ Opened File Explorer.
+
+ Navigated to Network and selected FILESHARE.
+
+ Right-clicked on the hr folder and chose Map network drive.
+
+ Assigned drive letter H:
+
+ Checked "Reconnect at signin" and ensured "Connect using different credentials" was unchecked.
+
+ Clicked Finish to complete the mapping.
+
+Explanation: Mapping the HR shared folder to drive H allows quick and consistent access to departmental resources.
+
+4. Resolving Internet Connectivity Issues
+
+The user reported an inability to access the internet. The following steps were undertaken:
+
+ Verified Network Connection:
+
+ Used the Ping utility to test connectivity to the ISP gateway 172.31.2.1, and received replies.
+
+  Attempted to access a website via a browser; received a "Can't connect to proxy server" error.
+
+ Checked Proxy Settings:
+
+Opened Settings, Network & Internet, Proxy
+
+ In the settings, I turned off the Use a proxy server option.
+
+After disabling the proxy server setting, internet connectivity was restored.
+
+Explanation: Incorrect proxy settings can redirect internet traffic improperly, leading to connectivity issues. Disabling unnecessary proxy settings often resolves these problems.
+
+
