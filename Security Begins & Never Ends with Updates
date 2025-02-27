@@ -1,0 +1,19 @@
+Security Begins & Never Ends with Updates [NG]
+
+Vulnerable FTP Updated:
+
+First, I logged on to the Backup server and updated the FTP service by using the command:
+sudo apt-get update && sudo apt-get upgrade
+
+Guest Admin Privileges Disabled
+
+Next, I logged onto the Domain Controller. I launched Server Manager > Tools > Active Directory Users and Computers > daswebs.com > Users.
+I right-clicked on user Guest and selected properties. I clicked on the Member Of tab and selected Domain Admin. 
+Next, I clicked on the Remove button to remove the guest user from the Domain Admin group. Click apply > OK > Ok
+
+Joomla Updated
+
+Finally, I logged onto the Workstation-Desk VM and opened the Firefox browser.
+In the address bar, I entered "joomla.daswebs.com/administrator".
+I signed in using the Playerone credentials for accessing Joomla.
+There was a newer version available, I updated Joomla and completed the lab.
