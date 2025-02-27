@@ -34,3 +34,5 @@ The IP address was properly configured but there was no default gateway set.
 using "sudo IP route add default via 172.16.10.250" I set the default gateway.
 
 Now a ping from Joomla to the workstation was successful.
+
+![XP range Configuration Management Gone Awry](https://github.com/user-attachments/assets/422bd975-d7a0-4b59-a0b6-9a406ef98110)
