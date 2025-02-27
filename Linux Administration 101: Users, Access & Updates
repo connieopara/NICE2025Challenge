@@ -1,0 +1,29 @@
+##Linux Administration 101: Users, Access & Updates  
+
+1) Creating a User Account for Gary Thatcher 
+I booted up the Prod-Web server Virtual Machine and logged in. To create a user account for Gary Thatcher with the username gthatcher, I executed the following command:  
+
+sudo adduser gthatcher
+
+
+2) Granting Admin (Sudo) Privileges  
+To give gthatcher administrative privileges, I used the visudo tool to safely edit the sudoers file. I opened it by running:
+
+sudo visudo
+ 
+Once inside the file, I scrolled to the bottom and typed in the letter i to enter insert mode then added the following line:  
+
+gthatcher ALL=(ALL) ALL
+```  
+To save and exit, I pressed <Esc>, then typed:  
+
+:wq
+  
+
+3) Updating the Apache Web Server  
+Finally, I updated the Apache web server using the following command:  
+
+sudo yum update
+
+
+This completed the lab requirement.
